@@ -8,13 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dessy.screeningtest.databinding.ItemEventHorizontalBinding
 import com.dessy.screeningtest.model.EventEntity
+import org.osmdroid.api.IMapController
+import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.gridlines.LatLonGridlineOverlay
 
-class HorizontalEventAdapter (private val list: List<EventEntity>): RecyclerView.Adapter<HorizontalEventAdapter.EventAdapterViewHolder>() {
+class HorizontalEventAdapter (private val list: List<EventEntity>, private val listener: EvenAdapterClickListener): RecyclerView.Adapter<HorizontalEventAdapter.EventAdapterViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventAdapterViewHolder {
         val itemEventHorizontalBinding = ItemEventHorizontalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return EventAdapterViewHolder(itemEventHorizontalBinding, parent.context)
+        return EventAdapterViewHolder(itemEventHorizontalBinding, parent.context, listener)
     }
 
     override fun onBindViewHolder(holder: EventAdapterViewHolder, position: Int) {
@@ -24,7 +27,7 @@ class HorizontalEventAdapter (private val list: List<EventEntity>): RecyclerView
 
     override fun getItemCount(): Int = list.size
 
-    class EventAdapterViewHolder(private val binding: ItemEventHorizontalBinding, private val context: Context): RecyclerView.ViewHolder(binding.root) {
+    class EventAdapterViewHolder(private val binding: ItemEventHorizontalBinding, private val context: Context, private val listener: EvenAdapterClickListener): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: EventEntity) {
             Glide.with(context)
@@ -34,8 +37,9 @@ class HorizontalEventAdapter (private val list: List<EventEntity>): RecyclerView
             binding.tvNamaEvent.text = item.event
 
             itemView.setOnClickListener {
-                Toast.makeText(context, "Lat: ${item.lat} \n Long: ${item.long}", Toast.LENGTH_SHORT).show()
+                listener.onItemClickListener(item)
             }
+
 
         }
     }
