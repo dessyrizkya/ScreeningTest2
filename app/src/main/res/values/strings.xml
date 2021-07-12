@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Screening Test</string>
+    <string name="selamat_datang">Selamat Datang!</string>
+    <string name="caption_ava_profil">Sertakan gambar profil Anda untuk melengkapi profil</string>
+    <string name="selesai">Selesai</string>
+    <string name="add_photo">add photo</string>
+    <string name="masukkan_nama">Masukkan Nama</string>
+    <string name="pilih_event">Pilih Event</string>
+    <string name="pilih_guest">Pilih Guest</string>
+    <string name="event">Event</string>
+    <string name="guest">Guest</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tortor odio, vestibulum eu orci at, interdum semper justo. Vivamus suscipit rutrum lobortis. Integer ut tortor in dui porta semper eget.</string>
+    <string name="event_hashtag">#event</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="map_view">Map View</string>
+    <string name="search">Search</string>
+</resources>

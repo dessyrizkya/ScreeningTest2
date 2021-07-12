@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_validation"
+        tools:context=".ui.MainActivity"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/selamat_datang"
+            android:textAlignment="center"
+            style="@style/FontTitle"
+            android:layout_marginTop="32dp"/>
+
+        <TextView
+            android:id="@+id/tv_ava_profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_welcome"
+            android:text="@string/caption_ava_profil"
+            android:textAlignment="center"
+            style="@style/FontNormal"
+            android:layout_marginTop="48dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"/>
+
+        <ImageView
+            android:id="@+id/img_add_photo"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/btn_add_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ava_profil"
+            android:contentDescription="@string/add_photo" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/img_add_photo"
+            android:background="@drawable/text_field"
+            android:layout_marginTop="96dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="4dp"
+            android:singleLine="true"
+            style="@style/FontNormal"
+            android:hint="@string/masukkan_nama"/>
+
+        <Button
+            android:id="@+id/btn_finish"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/selesai"
+            app:layout_constraintTop_toBottomOf="@id/et_name"
+            style="@style/FontButton"
+            android:background="@drawable/selector_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
